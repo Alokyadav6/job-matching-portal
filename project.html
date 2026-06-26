@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Job Matching Portal</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+    
+    <header>
+        <nav class="navbar">
+            <h1>Smart Job Matching Portal</h1>
+
+            <div class="nav-btns">
+                <button onclick="showSection('loginSection')">Login</button>
+                <button onclick="showSection('signupSection')">Sign Up</button>
+            </div>
+        </nav>
+    </header>
+
+    
+    <section class="hero">
+        <h2>Find Your Dream Job</h2>
+        <p>
+            Connect recruiters and job seekers through
+            smart skill-based matching.
+        </p>
+
+        <button onclick="showSection('signupSection')">
+            Get Started
+        </button>
+    </section>
+
+    
+    <section id="signupSection" class="form-section hidden">
+
+        <h2>Create Account</h2>
+
+        <select id="signupRole">
+            <option value="jobseeker">Job Seeker</option>
+            <option value="recruiter">Recruiter</option>
+        </select>
+
+        <input type="text" id="signupName"
+            placeholder="Full Name">
+
+        <input type="email" id="signupEmail"
+            placeholder="Email">
+
+        <input type="text" id="signupMobile"
+            placeholder="Mobile Number">
+
+        <input type="password" id="signupPassword"
+            placeholder="Password">
+
+        <button onclick="signup()">
+            Create Account
+        </button>
+
+    </section>
+
+    
+    <section id="loginSection"
+        class="form-section hidden">
+
+        <h2>Login</h2>
+
+        <input type="email" id="loginEmail"
+            placeholder="Email">
+
+        <input type="password" id="loginPassword"
+            placeholder="Password">
+
+        <button onclick="login()">
+            Login
+        </button>
+
+    </section>
+
+   
+    <section id="recruiterDashboard"
+        class="dashboard hidden">
+
+        <div class="top-bar">
+            <h2>Recruiter Dashboard</h2>
+            <button onclick="logout()">
+                Logout
+            </button>
+        </div>
+
+        
+        <div class="card">
+
+            <h3>Recruiter Profile</h3>
+
+            <input type="text"
+                id="companyName"
+                placeholder="Company Name">
+
+            <input type="text"
+                id="recruiterDesignation"
+                placeholder="Designation">
+
+            <button onclick="saveRecruiterProfile()">
+                Save Profile
+            </button>
+
+        </div>
+
+        
+        <div class="card">
+
+            <h3>Post New Job</h3>
+
+            <input type="text"
+                id="jobTitle"
+                placeholder="Job Title">
+
+            <input type="text"
+                id="jobSkills"
+                placeholder="Required Skills (Comma Separated)">
+
+            <input type="text"
+                id="jobSalary"
+                placeholder="Salary">
+
+            <input type="text"
+                id="jobExperience"
+                placeholder="Experience">
+
+            <textarea
+                id="jobDescription"
+                placeholder="Job Description"></textarea>
+
+            <button onclick="postJob()">
+                Post Job
+            </button>
+
+        </div>
+
+        
+        <div class="card">
+
+            <h3>My Posted Jobs</h3>
+
+            <div id="postedJobs">
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section id="jobSeekerDashboard"
+        class="dashboard hidden">
+
+        <div class="top-bar">
+            <h2>Job Seeker Dashboard</h2>
+
+            <button onclick="logout()">
+                Logout
+            </button>
+        </div>
+
+       
+        <div class="card">
+
+            <h3>My Profile</h3>
+
+            <input type="text"
+                id="education"
+                placeholder="Education">
+
+            <input type="text"
+                id="skills"
+                placeholder="Skills (Comma Separated)">
+
+            <input type="text"
+                id="resume"
+                placeholder="Resume Link">
+
+            <button onclick="saveProfile()">
+                Save Profile
+            </button>
+
+        </div>
+
+       
+        <div class="card">
+
+            <h3>Recommended Jobs</h3>
+
+            <div id="jobsContainer">
+            </div>
+
+        </div>
+
+       
+        <div class="card">
+
+            <h3>Applied Jobs</h3>
+
+            <div id="appliedJobs">
+            </div>
+
+        </div>
+
+    </section>
+
+   
+    <footer>
+        <p>
+            © 2026 Smart Job Matching Portal
+        </p>
+    </footer>
+
+    <script src="projectscript.js"></script>
+
+</body>
+</html>
